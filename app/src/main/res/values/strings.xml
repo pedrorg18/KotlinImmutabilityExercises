@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinImmutabilityTest</string>
+    <string name="act_created">Activity Created!</string>
+</resources>

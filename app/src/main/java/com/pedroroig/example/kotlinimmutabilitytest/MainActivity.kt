@@ -2,21 +2,30 @@ package com.pedroroig.example.kotlinimmutabilitytest
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    // We want an immutable property for the TextView
-    private val textView: TextView by lazy {
-        // Will be called once the property is accessed
-        findViewById<TextView>(R.id.tvHello)
-    }
-
+    private val person  = Person("François")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textView.text = getString(R.string.act_created)
+        storeInProperties(person)
+
+        // Should show initial value "François"
+        tvHello.text = person.name
+    }
+
+    private fun storeInProperties(person: Person) {
+        // Do stuff to store in prefs
+        // ...
+
+        person.name = "Pepe"
     }
 }
+
+
+class Person (
+    var name: String)

@@ -10,10 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val personList = listOf(Person("François"), Person("Pepe"))
+        val personList = mutableListOf(Person("François"), Person("Pepe"))
 
         // TODO Add Julie to the List
-//        personList.add(Person("Julie"))
+        personList.add(Person("Julie"))
 
         var chainedNames = ""
         personList.forEach { chainedNames += it.name + " " }

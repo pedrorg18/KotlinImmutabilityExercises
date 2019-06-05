@@ -6,25 +6,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val person  = Person("François")
+    private var person  = Person("François")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        storeInProperties(person)
+        // TODO Modify person object François to be Pepe, without making name var nor using Person's constructor
+//        person.name = "Pepe"
 
         // Should show initial value "François"
         tvHello.text = person.name
     }
 
-    private fun storeInProperties(person: Person) {
-        // Do stuff to store in prefs
-        // ...
-
-    }
 }
 
 
-class Person (
+data class Person (
     val name: String)

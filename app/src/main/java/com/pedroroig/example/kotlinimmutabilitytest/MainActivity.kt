@@ -6,17 +6,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var person  = Person("François")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // TODO Modify person object François to be Pepe, without making name var nor using Person's constructor
-        person = person.copy(name = "Pepe")
+        val personList = listOf(Person("François"), Person("Pepe"))
 
-        // Should show initial value "François"
-        tvHello.text = person.name
+        // TODO Add Julie to the List
+//        personList.add(Person("Julie"))
+
+        var chainedNames = ""
+        personList.forEach { chainedNames += it.name + " " }
+
+        // Should print three names
+        tvHello.text = chainedNames
     }
 
 }

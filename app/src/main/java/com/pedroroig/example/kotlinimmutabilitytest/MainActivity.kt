@@ -22,10 +22,9 @@ class MainActivity : AppCompatActivity() {
         // Do stuff to store in prefs
         // ...
 
-        person.name = "Pepe"
     }
 }
 
 
 class Person (
-    var name: String)
+    val name: String)
